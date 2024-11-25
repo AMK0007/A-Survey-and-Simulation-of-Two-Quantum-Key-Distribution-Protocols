@@ -1,2 +1,2 @@
 import qkdalgo.simulations as sim
-sim.runB92(10)
+sim.runBB84(6)

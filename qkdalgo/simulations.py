@@ -152,8 +152,8 @@ def runB92(n, eve=False, errorRate=0.0, verbose=True):
     if verbose:
         print("\nBob announces which photons were completely absorbed and"\
           "\nAlice and Bob discard the corresponding bits from their keys.\n")
-    print("Alice's shifted key:\n%s" % util.bitFormat(key_A))
-    print("Bob's shifted key:\n%s" % util.bitFormat(key_B))
+    print("Alice's sifted key:\n%s" % util.bitFormat(key_A))
+    print("Bob's sifted key:\n%s" % util.bitFormat(key_B))
 
     # Compare key information
     if len(key_A) != len(key_B):

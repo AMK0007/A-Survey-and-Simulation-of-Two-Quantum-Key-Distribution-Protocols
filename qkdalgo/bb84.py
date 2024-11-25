@@ -1,5 +1,6 @@
 import numpy as np
 import qit
+from qit.state import State
 import qkdalgo.qkdutils as util
 
 def simulateNoise(bits, errorRate):
@@ -28,7 +29,6 @@ def simulateEavesdrop(state, basis):
     return encodeBit(result, basis)
 
 def encodeBit(value, basis):
-    from qit.state import State
     """Return the quantum state representing the encoding of the given binary value in the given basis."""
     q = State('0')
 
