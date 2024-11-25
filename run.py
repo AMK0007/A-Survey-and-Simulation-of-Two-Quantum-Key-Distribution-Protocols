@@ -1,2 +1,2 @@
-import qkdsim.simulations as sim
+import qkdalgo.simulations as sim
 sim.runB92(10)

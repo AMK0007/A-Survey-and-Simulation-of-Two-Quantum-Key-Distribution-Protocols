@@ -1,6 +1,6 @@
 import numpy as np
 import qit
-import qkdsim.qkdutils as util
+import qkdalgo.qkdutils as util
 from qit.state import State
 
 def simulateNoise(bits, errorRate):
