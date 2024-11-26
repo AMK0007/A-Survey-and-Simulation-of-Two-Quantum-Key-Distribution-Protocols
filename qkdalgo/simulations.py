@@ -154,12 +154,17 @@ def runB92(n, eve=False, errorRate=0.0, verbose=True):
           "\nAlice and Bob discard the corresponding bits from their keys.\n")
     print("Alice's sifted key:\n%s" % util.bitFormat(key_A))
     print("Bob's sifted key:\n%s" % util.bitFormat(key_B))
-
-    # Compare key information
+    # Calculate the actual error rate based on the minimum length of the two keys
+    min_length = min(len(key_A), len(key_B))
+    if min_length > 0:
+        actualError = float(sum([1 for k in range(min_length) if key_A[k] != key_B[k]])) / min_length
+    else:
+        actualError = 0.0  # or handle the case as appropriate
     if len(key_A) != len(key_B):
         print("\nAlice and Bob announce the lengths of their keys. Since Alice's"\
               "\nkey is %d bits and Bob's is %d bits, they are able to detect"\
               "\nEve's interference and abort the protocol.\n" % (len(key_A), len(key_B)))
+        bb84.printStage5_2(errorRate, actualError)
         return -1
 
     announce_A, key_A, announce_B, key_B = util.discloseHalf(key_A, key_B)
@@ -173,9 +178,8 @@ def runB92(n, eve=False, errorRate=0.0, verbose=True):
     print("Alice's remaining %d-bit key:\n%s" % (numBits, util.bitFormat(key_A)))
     print("Bob's remaining %d-bit key:\n%s" % (numBits, util.bitFormat(key_B)))
 
-    print("Expected error rate: %f" % errorRate)
-    print("Actual error rate: %f" % (float(sum([1 for k in range(len(key_A)) if key_A[k] != key_B[k]]))/len(key_A)))
-
+    
+    bb84.printStage5_2(errorRate, actualError)
     if util.detectEavesdrop(key_A, key_B, errorRate):
         print("\nAlice and Bob detect Eve's interference and abort the protocol.\n")
         return -1
