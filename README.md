@@ -17,8 +17,6 @@ sim.runBB84(<keylen>)
 ## Modules used:
 NumPy - www.numpy.org
 
-PyCrypto - https://www.dlitz.net/software/pycrypto
-
 Quantum Information Toolkit (QIT) - qit.sourceforge.net
 
 Nose - https://pypi.python.org/pypi/nose/1.3.7
