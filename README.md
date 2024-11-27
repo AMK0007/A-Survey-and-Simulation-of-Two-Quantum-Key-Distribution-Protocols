@@ -1,4 +1,4 @@
-# QKD-simulation
+## A Survey and Simulation of Two Quantum Key Distribution Protocols
 CS4048 Quantum Computing simulation project on Quantum Key Distribution
 
 It contains answers to a few exercises from Nielsen & Chuang's Quantum Computation and Quantum Information and a survey and simulation of the BB84, B92, and E91 protocols for quantum key distribution.
