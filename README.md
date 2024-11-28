@@ -14,6 +14,11 @@ import qkdalgo.simulations as sim
 sim.runBB84(<keylen>)
 ```
 
+## File Structure
+- `docs/`: Contains documentation for the project.
+- `qkdalgo/`: Includes algorithms and implementations for quantum key distribution.
+- `run.py:` The main script for executing the B92 protocol with the latest fixes.
+
 ## Modules used:
 NumPy - www.numpy.org
 
